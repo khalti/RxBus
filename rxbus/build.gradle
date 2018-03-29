@@ -43,7 +43,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     /*ReactiveX*/
-    implementation rx.rxjava
+    api rx.rxjava
 
     /*Unit Testing*/
     testImplementation test.junit
