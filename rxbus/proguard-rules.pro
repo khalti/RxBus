@@ -21,3 +21,4 @@
 #-renamesourcefileattribute SourceFile
 
 -dontwarn sun.misc.Unsafe
+-dontwarn java.lang.invoke.**
