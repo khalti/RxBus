@@ -8,10 +8,10 @@ ext {
 
     butterKnifeVersion = '8.8.0'
 
-    rxVersion = '1.1.0'
+    rxVersion = '2.1.14'
 
     rx = [
-            rxjava            : "io.reactivex:rxjava:${rxVersion}",
+            rxjava            : "io.reactivex.rxjava2:rxjava:$rxVersion",
     ]
 
     junitVersion = '4.12'

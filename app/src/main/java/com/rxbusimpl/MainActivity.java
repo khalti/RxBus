@@ -9,6 +9,7 @@ import com.rxbus.RxBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.reactivex.disposables.CompositeDisposable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,19 +20,22 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.btnAdd2)
     Button btnAdd2;
 
+    CompositeDisposable compositeDisposable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        RxBus.getInstance().register(event -> {
+        compositeDisposable = new CompositeDisposable();
+        compositeDisposable.add(RxBus.getInstance().register(event -> {
             if (event.getTag().equals("add_1")) {
                 txt.setText((String) event.getEvent());
             } else if (event.getTag().equals("add_2")) {
                 txt.setText((String) event.getEvent());
             }
-        });
+        }));
 
         btnAdd1.setOnClickListener(view -> RxBus.getInstance().post("add_1", (Integer.parseInt(txt.getText() + "") + 1) + ""));
         btnAdd2.setOnClickListener(view -> RxBus.getInstance().post("add_2", (Integer.parseInt(txt.getText() + "") + 2) + ""));
