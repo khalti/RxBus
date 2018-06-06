@@ -20,5 +20,11 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+#utils
+-keep class com.stateLayout.utils.** { *; }
+
+#statelayout widget
+-keep class com.rxbus.** { *; }
+
 -dontwarn sun.misc.Unsafe
 -dontwarn java.lang.invoke.**
