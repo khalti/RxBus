@@ -1,11 +1,11 @@
 package com.rxbus;
 
 
-public class Event {
+class Event {
     private Object event;
     private String tag;
 
-    public Event(Object event, String tag) {
+    Event(Object event, String tag) {
         this.event = event;
         this.tag = tag;
     }
