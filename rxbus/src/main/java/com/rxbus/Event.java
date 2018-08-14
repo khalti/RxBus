@@ -1,17 +1,20 @@
 package com.rxbus;
 
 
+import io.reactivex.annotations.NonNull;
+
 public class Event {
-    private Object event;
+
+    private Object value;
     private String tag;
 
-    public Event(Object event, String tag) {
-        this.event = event;
+    Event(@NonNull String tag, @NonNull Object value) {
         this.tag = tag;
+        this.value = value;
     }
 
-    public Object getEvent() {
-        return event;
+    public Object getValue() {
+        return value;
     }
 
     public String getTag() {
